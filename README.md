@@ -1,5 +1,9 @@
 # RainbowDonut
-![ExampleGif](https://github.com/jasZnerol/RainbowDonut/blob/main/example.gif)![ExampleGif2](https://github.com/jasZnerol/RainbowDonut/blob/main/example.gif)
+This repository contains the first (single color) and the second (multi color) implementation of a spining donut with color
+![ExampleGif](https://github.com/jasZnerol/RainbowDonut/blob/main/example.gif)!
+
+
+[ExampleGif2](https://github.com/jasZnerol/RainbowDonut/blob/main/multicolor_example.gif)
 
 A fork created from the donut shaped c code that produces a donut output that does nothing else but to print that donut but with **special rainbow color stuff thingys**
 
