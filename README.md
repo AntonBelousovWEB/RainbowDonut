@@ -3,13 +3,15 @@ A fork created from the donut shaped c code that produces a donut output that do
 
 ## Credits
 
-This project is a frankenstein like merge of two existing project. First of course the existing code to produce a spinning donut. The source for this project can be found [here](https://www.a1k0n.net/2006/09/15/obfuscated-c-donut.html)  
-The second project I used template if you will is a implementation in c of the popular **useful** comando-line tool `lolcat`. The original project (at least I think) was [this] (https://github.com/busyloop/lolcat) written with ruby.
-I first changing this implementation a little and just adjust it so it can do the trick. But what I had to find out that it had a poor performance and the donut was laggy. **UNACCEPTABLE**!!!1eleven!
+This project is a frankenstein like merge of two existing project. First of course the existing code to produce a spinning donut. The source for this project can be found [here](https://www.a1k0n.net/2006/09/15/obfuscated-c-donut.html).  
+The second project I used was an implementation in C of the popular **useful** comando-line tool `lolcat`. The original project (at least I think) was [this] (https://github.com/busyloop/lolcat) written in ruby.
+I first changed this implementation a little and just adjusted it so it can do the trick. But what I had to find out was that it had a poor performance and the donut was laggy. **UNACCEPTABLE**!!!1eleven!
 
-A new solution must be found for this urgent project! It was 6 o'clock in the morning and I found just what I was looking for. A fast and efficient implementation of `lolcat` written in C. The git repositroy can be found [here](https://github.com/IchMageBaume/clolcat).  
-This was perfect as I no longer had to use a pipe to get the output of donut.c and let lolcat *change* the color. I could now use a good implementation to change the color of the output directly within the donut.c file.
+A new solution had to be found for this urgent project! It was 6 o'clock in the morning and I found just what I was looking for. A fast and efficient implementation of `lolcat` written in C. The git repositroy can be found [here](https://github.com/IchMageBaume/clolcat).  
+This was perfect as I no longer had to use a pipe to get the output of donut.c and let lolcat *change* the color. I could just use the existing implementation to change the color of the output directly within the donut.c file.
 
-This also meant I had to somehow make sense of the donut.c file. Well at least I had to get a basic understanding which print did what and then 'add' the 'color characters' that.
-But after that was doen and I made some superficial changes to the program to fit my problem better it was up and running.
+This also meant I had to somehow make sense of the donut.c file or at least I had to get a basic understanding which print did what and then 'add' the 'color characters'.
+I encountered the problem that the 'output buffer' does not contain new line characters and those were printed via a ternary expression within the putchar. This at first made it harder for me and I changed it so the output buffer also contains the new line characters. 
+What I had to realize after a lot of work is that this was unnecessary. My brain - now at a functinal level of maybe 2%, my body desperate for sleep but my determination still strong just couldn't let this go. So I just smashed my head on the keyboard until the compiled program did what I wanted it to do.
 
+This leaves us at where we are right now. A weird useless programm that produces a somewhat pleasent output with unnecessary superficial changes to the original projects.
