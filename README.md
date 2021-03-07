@@ -27,4 +27,4 @@ gcc donut.c -o donut -lm && ./donut
 Note that I removed the includes (which I had included while working on the project). But in a sense I felt I should remove them to at least somewhat keep in the spirit of the original source :) 
 
 ## Special thanx
-Special thanx to [this](https://www.youtube.com/watch?v=9xDtwYJx7yc) for keeping me sane and generally keeping the mood up through out the knight.
+Special thanx to [this](https://www.youtube.com/watch?v=9xDtwYJx7yc) for keeping me sane and generally keeping the mood up through out the night.
