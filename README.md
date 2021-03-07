@@ -1,6 +1,6 @@
 # RainbowDonut
 This repository contains the first (single color) and the second (multi color) implementation of a spining donut with color
-![ExampleGif](https://github.com/jasZnerol/RainbowDonut/blob/main/example.gif)!
+![ExampleGif](https://github.com/jasZnerol/RainbowDonut/blob/main/example.gif)
 
 
 ![ExampleGif2](https://github.com/jasZnerol/RainbowDonut/blob/main/multicolor_example.gif)
