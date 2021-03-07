@@ -9,7 +9,6 @@
 #include <string.h>
 #include <stdint.h>
 char** color_map = NULL;
-#define BUFSZ 1760 + 22
 double freq = 0.01;
 int pos_mod = 0;
 void write_color_by_offset(int fd, char* data, int size);
