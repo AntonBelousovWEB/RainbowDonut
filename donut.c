@@ -10,21 +10,19 @@
 #include <stdint.h>
 char** color_map = NULL;
 #define BUFSZ 1760 + 22
-double freq = 0.1;
-int invert = 0;
-int ignore_file_errors = 0;
+double freq = 0.01;
 int pos_mod = 0;
 void write_color_by_offset(int fd, char* data, int size);
 uint32_t color_by_offset(int i) {
 	return 
 		((uint8_t)(sin(freq * i)                * 127 + 128) << 24) |
-		((uint8_t)(sin(freq * i + 3.41 / 3 * 2) * 127 + 128) << 16) |
-		((uint8_t)(sin(freq * i + 3.41 / 3 * 4) * 127 + 128) <<  8) |
+		((uint8_t)(sin(freq * i + 3.141 / 3 * 2) * 127 + 128) << 16) |
+		((uint8_t)(sin(freq * i + 3.141 / 3 * 4) * 127 + 128) <<  8) |
 		((0x00)                                              <<  0);
 }
 int main() {
   for(int i = 1; ; i++) {
-    double d = fmod(freq * i + freq / 10, 3.41 * 2);
+    double d = fmod(freq * i + freq / 10, 3.141 * 2);
     if(d < freq / 5) {
       pos_mod = i;	
       break;
@@ -43,7 +41,6 @@ int main() {
       &esc_len);
 
   }
-  int slow_color_change = 3;
   float A=0;
   float B=0;
   float i;
@@ -83,11 +80,8 @@ int main() {
     }
     printf("\x1b[H");
     printf("%s", color_map[color_idx]);
-    slow_color_change++;
-    if (slow_color_change++ > 3) {
-      color_idx = (color_idx >= pos_mod - 1) ? 0 : color_idx + 1;
-      slow_color_change = 0;
-    }
+    color_idx = (color_idx >= pos_mod - 1) ? 0 : color_idx + 1;
+
     for (int k = 0; k < 1760 + 22; k++) {
       putchar(b[k]);
     }
