@@ -48,6 +48,7 @@ int main() {
   float z[1760];
   char  b[1760];
   int color_idx = 0; 
+  int color_start = 0;
   printf("\x1b[2J");
   for (;;) {
     memset(b, 32, 1760);
@@ -76,9 +77,11 @@ int main() {
       }
     }
     printf("\x1b[H");
-    printf("%s", color_map[color_idx]);
-    color_idx = (color_idx >= pos_mod - 1) ? 0 : color_idx + 1;
+    color_start = (color_start >= pos_mod - 1 ) ? 0 : color_start + 1;
+    color_idx = color_start;
     for (int k = 0; k < 1761; k++) {
+      printf("%s", color_map[color_idx]);
+      color_idx = (color_idx >= pos_mod - 1) ? 0 : color_idx + 1;
       putchar(k % 80 != 0 ? b[k]: '\n');
     }
  
