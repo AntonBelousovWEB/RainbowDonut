@@ -1,4 +1,4 @@
-from math import sin, cos, ceil
+from math import sin, cos
 import sys
 A = 0.0
 B = 0.0
