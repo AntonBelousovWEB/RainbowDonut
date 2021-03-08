@@ -14,10 +14,10 @@ int pos_mod = 0;
 void write_color_by_offset(int fd, char* data, int size);
 uint32_t color_by_offset(int i) {
 	return 
-		((uint8_t)(sin(freq * i)                * 127 + 128) << 24) |
+		((uint8_t)(sin(freq * i)                 * 127 + 128) << 24) |
 		((uint8_t)(sin(freq * i + 3.141 / 3 * 2) * 127 + 128) << 16) |
 		((uint8_t)(sin(freq * i + 3.141 / 3 * 4) * 127 + 128) <<  8) |
-		((0x00)                                              <<  0);
+		((0x00)                                               <<  0);
 }
 int main() {
   for(int i = 1; ; i++) {
